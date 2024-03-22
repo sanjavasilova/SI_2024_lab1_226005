@@ -1,0 +1,86 @@
+4. Откако сме направиле локален репозиториум, ги извршуваме следните команди:
+- git init (Го иницијализираме git во директориумот)
+5.
+- git remote add origin git@github.com:sanjavasilova/SI_2024_lab1_226005.git (Се поврзуваме со оддалечениот репозиториум)
+6.
+- nano README.md (Внатре ги пишуваме потребните податоци)
+- git add README.md (Се ставаат фајловите во staging состојба)
+- git commit -m "Initial commit" (Го зачувувамe во историјата на локалниот репозиториум)
+7.
+Откако ќе ги преземеме фајловите и ќе ги додадеме во локалниот репозиториум:
+-git add --all (Се ставаат фајловите во staging состојба)
+-git commit -m "Add starter code" (Ги зачувувамe во историјата на локалниот репозиториум)
+
+8.
+-git fetch
+-git push -u origin master (Синхронизираме со оддалечениот репозиториум, ги прикачуваме дадените фајлови)
+9.
+-git branch bug1 (Креираме гранки со git branch име-на-гранка)
+-git branch bug2
+10.
+-git checkout bug1 (Се префрламе на bug1 гранката)
+11.
+-nano SILab1_1.java (Го променив == со !=)
+-git add SILab1_1.java (Се става фајлот во staging состојба)
+-git commit -m "Fix wrong condition in filterOddLengthStrings" (Гo зачувувамe во историјата на локалниот репозиториум)
+12.
+-git checkout bug2 (Се префрламе на bug2 гранката)
+13.
+-nano SILab1_2.java (Го променив < со >=)
+-git add SILab1_2.java (Се става фајлот во staging состојба)
+-git commit -m "Fix wrong condition in makeBigStringFrom" (Гo зачувувамe во историјата на локалниот репозиториум)
+14.
+-git checkout bug1 (Се префрламе на bug1 гранката)
+15.
+-nano SILab1Main.java (На линија 16 го повикувам методот)
+-git add SILab1Main.java (Се става фајлот во staging состојба)
+-git commit -m "Call method filteredOddLengthStrings in main class" (Гo зачувувамe во историјата на локалниот репозиториум)
+16.
+-git checkout bug2 (Се префрламе на bug2 гранката)
+17.
+-nano SILab1Main.java (На линија 16 го повикувам методот)
+-git add SILab1Main.java (Се става фајлот во staging состојба)
+-git commit -m "Call method makeBigStringFrom in main class" (Гo зачувувамe во историјата на локалниот репозиториум)
+18.
+-git fetch
+-git push origin master
+-git push origin bug1
+-git push origin bug2 (Ги синхронизираме сите гранки со оддалечениот репозиториум, ги прикачуваме дадените фајлови)
+19.
+-git checkout master (Се префрламе на гранката master)
+20.
+-git merge bug1 (Нема конфликти, употребена е fast-forward стратегијата)
+21.
+-git fetch
+-git push origin master
+-git push origin bug1
+-git push origin bug2 (Ги синхронизираме сите гранки со оддалечениот репозиториум, ги прикачуваме дадените фајлови)
+22.
+-git checkout bug2 (Се префрламе на гранката bug2)
+23.
+-git rebase master
+(Се појави конфликт заради линија 16 во SILab1Main.java, истата ја разрешив со тоа што едниот метод го повикав на линија 16, а другиот на линија 17, стратегијата е recursive)
+-nano SILab1Main.java
+-git add SILab1Main.java (Се става фајлот во staging состојба)
+-git commit -m "Resolved conflict" (Гo зачувувамe во историјата на локалниот репозиториум)
+-git rebase --continue (Продолжува rebase)
+24.
+-git checkout master (Се префрламе на master гранката)
+25.
+-git merge bug2 (Нема конфликт, се користи fast-forward стратегија)
+26/27.
+-git fetch
+-git push origin master
+-git push origin bug1
+-git push origin bug2 (Бидејќи дава error кога се обидуваме да направиме push, мора да користиме force push)
+-git push --force origin bug2 (Ги синхронизираме сите гранки со оддалечениот репозиториум, ги прикачуваме дадените фајлови)
+28.
+-git log > logs.txt (Ги зачувуваме досегашните git логови)
+-git add 226005.txt
+-git add logs.txt (Ге ставаме фајловите во staging состојба)
+-git commit -m "Final commit" (Ги зачувувамe во историјата на локалниот репозиториум)
+29.
+-git fetch
+-git push origin master
+-git push origin bug1
+-git push origin bug2 (Ги синхронизираме сите гранки со оддалечениот репозиториум, ги прикачуваме дадените фајлови)
